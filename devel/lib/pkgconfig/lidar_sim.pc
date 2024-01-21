@@ -1,0 +1,8 @@
+prefix=/home/lcx/Asterism/devel
+
+Name: lidar_sim
+Description: Description of lidar_sim
+Version: 0.0.0
+Cflags: -I/home/lcx/Asterism/devel/include -I/home/lcx/Asterism/src/lidar_slam/lidar_sim/include
+Libs: -L${prefix}/lib 
+Requires: serial cmake_modules geometry_msgs mavros nav_msgs roscpp rospy sensor_msgs std_msgs message_runtime tf mavros_msgs

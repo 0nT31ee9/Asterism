@@ -1,0 +1,22 @@
+<launch>
+  <!-- <arg name="sub_slam_topic_" default="/slam_out_pose"/> -->
+  <arg name="sub_slam_topic_" default="/iris_0/mavros/vision_pose/pose"/>
+  <arg name="sub_truth_topic_" default="/iris_0/ground_truth/state"/>
+  <arg name="odom_pub_topic_" default="/slam2odom"/>
+  
+  <node pkg="lidar_sim" type="slam2odom" name="slam2odom_node" output="screen">
+    <param name="sub_slam_topic_" value="$(arg sub_slam_topic_)"/>
+    <param name="sub_truth_topic_" value="$(arg sub_truth_topic_)"/>
+    <param name="odom_pub_topic_" value="$(arg odom_pub_topic_)"/>
+  </node>
+
+  <arg name="odom_sub_topic" default="/slam2odom"/>
+  <arg name="odom_pub_topic" default="/iris_0/mavros/odometry/out"/>
+  <arg name="system_status_pub_topic" default="/iris_0/mavros/companion_process/status"/>
+
+  <node name="slam2px4_node" pkg="lidar_sim" type="slam2px4_node" output="screen" >
+    <param name="odom_sub_topic" value="$(arg odom_sub_topic)"/>
+    <param name="odom_pub_topic" value="$(arg odom_pub_topic)"/>
+    <param name="system_status_pub_topic" value="$(arg system_status_pub_topic)"/>
+  </node>
+</launch>

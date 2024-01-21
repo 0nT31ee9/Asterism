@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--    總體   -->
+  <arg name="vehicle_id" default="0"/>
+  <arg name="vehicle_type" default="iris"/>
+
+  <!--  JoyStick -->
+	<arg name="joy_timeout" value="5"/>
+	<arg name="joy_axes_zero_tolerance" value="0.1"/>
+
+  <!--   Gazebo  -->
+  <arg name="est" default="ekf2"/>
+  <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/indoor1.world"/>
+  <!-- <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/robocom.world"/> -->
+  <arg name="gui" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="paused" default="false"/>
+
+
+  <!--  >>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+  <!--  >>>>>   Gazebo模擬器   <<<<<<  -->
+  <!-- <include file="$(find agent_launch)/launch/xml/gz/indoor1.xml"></include> -->
+  
+
+  <!-- <include file="$(find agent_launch)/launch/xml/gz/indoor3.xml"></include> -->
+  
+
+  <include file="$(find agent_launch)/launch/xml/gz/robocom.xml"></include>
+  
+
+	<!--  >>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+  <!--  >>>>>>   RC_IN 模擬   <<<<<<  -->
+
+	<node pkg="joy" type="joy_node" name="joy_node">
+		<param name="autorepeat_rate" value="10"/>
+	</node>
+
+	<node pkg="agent_connection" type="joy_trans_px4" 
+      name="joy_trans_px4" output="screen" >
+      <param name="vehicle_type" value="$(arg vehicle_type)"/>
+      <param name="vehicle_id" value="$(arg vehicle_id)"/>
+      <param name="joy_timeout" value="$(arg joy_timeout)"/>
+      <param name="joy_axes_zero_tolerance" value="$(arg joy_axes_zero_tolerance)"/>
+  </node>
+
+</launch>

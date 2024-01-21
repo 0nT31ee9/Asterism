@@ -1,0 +1,8 @@
+prefix=/home/lcx/Asterism/devel
+
+Name: decomp_ros_utils
+Description: Description of decomp_ros_utils
+Version: 0.0.0
+Cflags: -I/home/lcx/Asterism/src/utils/DecompROS/decomp_ros_utils/include
+Libs: -L${prefix}/lib -ldecomp_rviz_plugins
+Requires: roscpp rviz decomp_ros_msgs

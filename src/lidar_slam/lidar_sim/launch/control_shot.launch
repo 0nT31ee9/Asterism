@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node pkg="lidar_sim" type="shot" name="shot_node" output="screen">
+  </node>
+
+    <node pkg="lidar_sim" type="control" name="control_node" output="screen">
+  </node>
+</launch>

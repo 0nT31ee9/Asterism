@@ -1,0 +1,8 @@
+prefix=/home/lcx/Asterism/devel
+
+Name: pose_utils
+Description: Description of pose_utils
+Version: 0.1.0
+Cflags: -I/home/lcx/Asterism/src/utils/pose_utils/include
+Libs: -L${prefix}/lib -lpose_utils
+Requires: 

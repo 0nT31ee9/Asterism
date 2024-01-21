@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+  <!--  2d planning  -->
+  <arg name="motion_planning" default="/home/echo/UAV_engi/src/tools_launch/launch/xml/2d_plan"/>
+  <arg name="move_forward_only" default="false"/>
+  <arg name="open_rviz" default="true"/>
+
+  <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
+  <!--  >>>>>>  Lidar AND Mavros  <<<<<<  -->
+  <!-- <group ns="iris_0"> -->
+  <include file="$(find mavros)/launch/px4.launch"></include>
+  <!-- </group> -->
+  <include file="$(find rplidar_ros)/launch/rplidar_s2.launch"></include>
+  <include file="$(find cartographer_ros)/launch/cartographer.launch"></include>
+
+  <!--  >>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+  <!--  >>>>>>   2d Planning  <<<<<< -->
+  <node pkg="tf" type="static_transform_publisher" name="odom_to_map"
+  args="0.0 0.0 0 0.0 0.0 0.0 /odom /map 40" />
+  <!-- <include file="$(find px4_realsense_bridge)/launch/bridge.launch"></include> -->
+
+  <include file="$(arg motion_planning)/launch/move_base.launch">
+    <arg name="motion_planning" value="$(arg motion_planning)"/>
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+    <arg name="cmd_vel_topic" default="/cmd_vel" />
+    <arg name="odom_topic" default="/mavros/local_position/odom" /> 
+    <!-- <arg name="cmd_vel_topic" default="/cmd_vel_flu" /> -->
+    <!-- <arg name="odom_topic" default="/mavros/local_position/odom" /> -->
+  </include>
+
+  <group if="$(arg open_rviz)">
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(arg motion_planning)/rviz/2d_motion_planning.rviz"/>
+  </group>
+
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg motion_planning)/map/map.yaml"/>
+
+</launch>
+
