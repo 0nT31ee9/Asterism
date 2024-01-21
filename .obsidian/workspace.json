@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "1c1ab929f588d7f4",
+    "type": "split",
+    "children": [
+      {
+        "id": "ec6053cf7118b07a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "930139e18e211fe3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2023无人飞行器智能感知竞赛-星群.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9b28105d5ffdf11b",
+    "type": "split",
+    "children": [
+      {
+        "id": "58713f896c0fb54e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be420308271217af",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2e88d9cebd32fa36",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "262f00ba94dfe5e1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8d442412e0cd7465",
+    "type": "split",
+    "children": [
+      {
+        "id": "83eed577c1eabbbb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a29a1a6ca2acbf40",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2023无人飞行器智能感知竞赛-星群.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d41e07bbec0ddfc1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2023无人飞行器智能感知竞赛-星群.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1d4fbd1108a5122d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "7aafa43427874e35",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2023无人飞行器智能感知竞赛-星群.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "930139e18e211fe3",
+  "lastOpenFiles": [
+    "Pasted image 20240120162210.png",
+    "Pasted image 20240121085838.png",
+    "Pasted image 20240120162322.png",
+    "Pasted image 20240120162210-1.png",
+    "2023无人飞行器智能感知竞赛-星群.md"
+  ]
+}
